@@ -1,0 +1,169 @@
+html, body,
+.st-container,
+.st-pusher,
+.st-content {
+	height: 100%;
+}
+.st-content {
+	overflow-y: scroll;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.st-content,
+.st-content-inner {
+	position: relative;
+}
+.st-container {
+	position: relative;
+	overflow: hidden;
+}
+.st-pusher {
+	position: relative;
+	left: 0;
+	z-index: 9999;
+	height: 100%;
+	perspective: 1000px;
+	-webkit-transform: translate3d(0%, 0, 0px);
+	transform: translate3d(0%, 0, 0px);
+	perspective: 1000px;
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+   	-o-transition: all 0.5s ease-in-out;
+   	transition: all 0.5s ease-in-out;
+   	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.st-pusher::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	/*background: rgba(0,0,0,0.5);*/
+	content: '';
+	opacity: 0;
+	z-index: 999;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.st-menu-open .st-pusher::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+.st-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	/*background: url('../images/saifmainBG-Blur.jpg') no-repeat fixed center;*/
+	background-size: cover;
+}
+.st-effect.st-container {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+.st-effect .st-pusher {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.st-effect.st-menu-open .st-pusher {
+	-webkit-transform: translate3d(-70%, 0, -10px) rotateY(50deg);
+	transform: translate3d(-70%, 0, -10px) rotateY(50deg);
+
+    -webkit-box-shadow: 0px 0px 27px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 27px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 27px 1px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+  	overflow: hidden;
+
+  	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  	filter: alpha(opacity=50);
+  	-moz-opacity: 0.5;
+  	-khtml-opacity: 0.5;
+  	opacity: 0.5;
+}
+.st-effect.st-menu-open .st-pusher .mob_homebtns{
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.st-effect.st-menu {
+	opacity: 1;
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+	text-align: right;
+}
+.st-effect.st-menu-open .st-effect.st-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.st-effect.st-menu::after {
+	display: none;
+}
+/*********************/
+.st-menu > ul{
+	padding: 20px;
+
+}
+.st-menu > ul > li{
+	padding: 15px 0px;
+}
+.st-menu ul li a{
+	color: #fff;
+	display: block;
+}
+.st-menu > ul > li > a{
+	font-size: 19px;
+	color: #fff;
+}
+.st-menu ul li ul li a{
+	font-size: 15px;
+}
+/*.st-menu > ul > li:first-child{
+	text-align: center;	
+}
+.st-menu > ul > li > a > img{
+	margin: 0 auto;
+	display: inherit;
+}*/
+.st-menu > ul > li > ul{
+	display: none;
+	padding-top: 10px;
+}
+/*.st-menu > ul > li:hover > ul*/.Bibo{
+	display: block !important;
+}
+.st-menu > ul > li > ul> li{
+	padding: 10px 0px;
+}
+.st-menu > ul > li > ul> li a{
+	-webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+   	-o-transition: all 0.25s ease-in-out;
+   	transition: all 0.25s ease-in-out;
+}
+.st-menu > ul > li > ul> li a:hover{
+	letter-spacing: 2px;
+}

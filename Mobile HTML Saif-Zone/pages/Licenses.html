@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<meta http-equiv="Content-Type" content="text/html" />
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1.0">
+  	<title>Saif-Zone</title>
+
+  	<link rel="stylesheet" href="../css/Mobile.css">
+  	<link rel="stylesheet" type="text/css" href="../css/MobMenu.css" />
+
+  	<script src="../js/jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		function opensubmenu() {
+			jQuery(".majormenu").next().toggleClass('Bibo');
+		}
+		
+		function opensubmenu2() {
+			jQuery(".majormenu2").next().toggleClass('Bibo');
+		}
+		
+		function opensubmenu3() {
+			jQuery(".majormenu3").next().toggleClass('Bibo');
+		}
+	</script>
+</head>
+<body>
+
+<div id="st-container" class="st-container">
+	
+	<nav class="st-menu st-effect">
+		<ul>
+			<li><a href="index.html"><img src="../images/Menu-Logo.png" alt=""></a></li>
+			<li><a href="#" onMouseUp="opensubmenu();" class="majormenu">About</a>
+				<ul id="subm">
+					<li><a href="Chairmanmsg.html">Chairman’s Message</a></li>
+					<li><a href="Strategy.html">Strategy</a></li>
+					
+					<li><a href="Sharjah.html">Sharjah</a></li>
+				</ul>
+			</li>
+			<li><a href="#" onMouseUp="opensubmenu2();" class="majormenu2">Why SAIF ZONE</a>
+				<ul id="subm">
+					<li><a href="overview.html">Overview</a></li>
+					<li><a href="Testimonials.html">Testimonials</a></li>
+				</ul>
+			</li>    
+			<li><a href="#" onMouseUp="opensubmenu3();" class="majormenu3">What We Offer</a>
+				<ul id="subm">
+					<li><a href="Licenses.html">Licenses</a></li>
+					<li><a href="Facilities.html">Facilities</a></li>
+					
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	
+
+
+	<div class="st-pusher">
+		<div class="st-content">
+
+			<div class="topbar">				
+				<div class="mobile_share">
+					<input type="button" id="Share_Btn" value="">
+					<div id="ShareGroups">
+						<a href="#" class="mob_facebook"></a>
+						<a href="#" class="mob_twitter"></a>
+						<a href="#" class="mob_instagram"></a>
+						<a href="#" class="mob_gplus"></a>
+					</div>
+				</div>
+				<div id="st-trigger-effects">	
+					<a class="Mobile_menu" href="#" data-effect="st-effect"></a>				
+				</div>
+				<div class="clr"></div>
+			</div><!--topbar-->
+
+			<div class="contentarea">
+				<h3 class="pagetitle">Licenses</h3>
+				<div class="inner">
+					<div class="ms-rtestate-field"><h1>Licenses&#8203;</h1> 
+<p> 
+   <strong></strong>
+   <strong>Licensing Options for&nbsp; Maximum&nbsp; Business&nbsp; Freed&#8203;om</strong></p> 
+<table class="table" style="margin: 0px;">
+   <tbody>
+      <tr>
+         <td colspan="2"> 
+            <h3 style="margin: 0px;">&#8203;Trade License&#8203;&#8203;</h3> 
+         </td>
+      </tr>
+      <tr style="background-color: #f9f9f9;">
+         <td>
+            <h5>&#8203;Commercial License</h5>
+         </td>
+         <td>&#8203;Import, Export, Distribution, consolidation, storage or warehousing of items speciﬁc in the license, Maximum limit is three similar product lines.</td>
+      </tr>
+      <tr style="background-color: #f9f9f9;">
+         <td>
+            <h5>&#8203;General Trading</h5>
+         </td>
+         <td>&#8203;General Trading license can be obtained under a commercial license which allows a large number of products.</td>
+      </tr> 
+   </tbody>
+</table>
+<table class="table" style="margin: 0px;">
+   <tbody>
+      <tr>
+         <td colspan="2"> 
+            <h3 style="margin: 0px;">&#8203;Service license</h3> 
+         </td>
+      </tr> 
+      <tr style="background-color: #f9f9f9;">
+         <td>Service license allows the holder to carry out service speciﬁed in the license only.&nbsp; All type of services are allowed unless otherwise restricted by the Federal or local authorities.</td>
+      </tr>
+   </tbody>
+</table> 
+<table class="table" style="margin: 0px;">
+   <tbody>
+      <tr>
+         <td colspan="2"> 
+            <h3 style="margin: 0px;">&#8203;Industrial License</h3> 
+         </td>
+      </tr>
+      <tr style="background-color: #f9f9f9;">
+         <td>&#8203;Import&nbsp; of&nbsp; raw&nbsp; materials,&nbsp; manufacturing,&nbsp; processing,&nbsp; assembling, packaging and exporting the ﬁnished product.&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;</td>
+      </tr>
+   </tbody>
+</table></div>
+					
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+	
+	
+</div>
+
+<script>
+	var jq = jQuery.noConflict();
+		jq( "#Share_Btn" ).click(function() {
+	  		jq( "#ShareGroups" ).slideToggle( "fast" );
+		});
+</script>
+<script src="../js/classie.js"></script>
+<script src="../js/sidebarEffects.js"></script>
+
+</body>
+</html>
