@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		520D8670200C77D2006B8AE3 /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D866F200C77D2006B8AE3 /* UICheckBox.swift */; };
+		525FAFA2200CB63200ACD2D6 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FAFA1200CB63200ACD2D6 /* EntryController.swift */; };
+		52FEE0FA200CC4E100C11987 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEE0F9200CC4E100C11987 /* Utilities.swift */; };
+		AB120FAA1BEB660A005CDE00 /* Mobile HTML Saif-Zone in Resources */ = {isa = PBXBuildFile; fileRef = AB120FA91BEB660A005CDE00 /* Mobile HTML Saif-Zone */; };
+		AB1D81A21BC51ACD0097A4E0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D81A11BC51ACD0097A4E0 /* Reachability.swift */; };
+		AB1EF2691B83306600812767 /* LocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1EF2681B83306600812767 /* LocationAddress.swift */; };
+		AB1F7D5C1C8D69D100C0BCBD /* vcLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F7D5B1C8D69D100C0BCBD /* vcLogin.swift */; };
+		AB1F7D5E1C8D705C00C0BCBD /* lstSetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB1F7D5D1C8D705C00C0BCBD /* lstSetting.plist */; };
+		AB57D0EF1B81DDAE002D805D /* vcSaifzoneNoInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB57D0EE1B81DDAE002D805D /* vcSaifzoneNoInternet.swift */; };
+		AB57D0FA1B81E7B5002D805D /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB57D0F21B81E7B5002D805D /* MMDrawerBarButtonItem.m */; };
+		AB57D0FB1B81E7B5002D805D /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB57D0F41B81E7B5002D805D /* MMDrawerController.m */; };
+		AB57D0FC1B81E7B5002D805D /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = AB57D0F71B81E7B5002D805D /* MMDrawerVisualState.m */; };
+		AB57D0FD1B81E7B5002D805D /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB57D0F91B81E7B5002D805D /* UIViewController+MMDrawerController.m */; };
+		AB57D0FF1B81EA14002D805D /* tbMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB57D0FE1B81EA14002D805D /* tbMenu.swift */; };
+		AB57D1011B81EC14002D805D /* MainNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB57D1001B81EC14002D805D /* MainNav.swift */; };
+		AB57D1031B81ECDB002D805D /* vcMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB57D1021B81ECDB002D805D /* vcMenu.swift */; };
+		AB57D1051B8214D2002D805D /* vcMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB57D1041B8214D2002D805D /* vcMap.swift */; };
+		AB9A740F1CB63E340041FD91 /* loginbut.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9A740E1CB63E340041FD91 /* loginbut.png */; };
+		AB9FFF361CB3ED10005DFFFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9FFF351CB3ED10005DFFFD /* CoreGraphics.framework */; };
+		AB9FFF381CB3ED1B005DFFFD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9FFF371CB3ED1B005DFFFD /* CoreMedia.framework */; };
+		AB9FFF3B1CB3F9FB005DFFFD /* saif-zone-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB9FFF391CB3F9FB005DFFFD /* saif-zone-bg.jpg */; };
+		AB9FFF3C1CB3F9FB005DFFFD /* saif-zone-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9FFF3A1CB3F9FB005DFFFD /* saif-zone-logo.png */; };
+		ABAAE84D1B7B4B9C00352BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAAE84C1B7B4B9C00352BE4 /* AppDelegate.swift */; };
+		ABAAE84F1B7B4B9C00352BE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAAE84E1B7B4B9C00352BE4 /* ViewController.swift */; };
+		ABAAE8541B7B4B9D00352BE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABAAE8531B7B4B9D00352BE4 /* Images.xcassets */; };
+		ABAAE8571B7B4B9D00352BE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABAAE8551B7B4B9D00352BE4 /* LaunchScreen.xib */; };
+		ABAAE8631B7B4B9D00352BE4 /* SaifZoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAAE8621B7B4B9D00352BE4 /* SaifZoneTests.swift */; };
+		ABAAE8701B7B4BB800352BE4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAAE86F1B7B4BB800352BE4 /* MBProgressHUD.m */; };
+		ABAAE8721B7B4BE100352BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAAE8711B7B4BE100352BE4 /* Main.storyboard */; };
+		ABDECCCA1BB92A0F00C770C8 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDECCC91BB92A0F00C770C8 /* back.png */; };
+		ABDF99FD1BCB9D3800AF3CA9 /* HelpperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDF99FC1BCB9D3800AF3CA9 /* HelpperClass.swift */; };
+		ABDF9A001BCD01D800AF3CA9 /* SaifZone-568h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDF99FE1BCD01D800AF3CA9 /* SaifZone-568h.jpg */; };
+		ABDF9A011BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDF99FF1BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABAAE85D1B7B4B9D00352BE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABAAE83F1B7B4B9C00352BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABAAE8461B7B4B9C00352BE4;
+			remoteInfo = SaifZone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		520D866F200C77D2006B8AE3 /* UICheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
+		525FAFA1200CB63200ACD2D6 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		52FEE0F9200CC4E100C11987 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		AB120FA91BEB660A005CDE00 /* Mobile HTML Saif-Zone */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Mobile HTML Saif-Zone"; sourceTree = "<group>"; };
+		AB1D81A11BC51ACD0097A4E0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		AB1EF2681B83306600812767 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAddress.swift; path = ../LocationAddress.swift; sourceTree = "<group>"; };
+		AB1F7D5B1C8D69D100C0BCBD /* vcLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vcLogin.swift; sourceTree = "<group>"; };
+		AB1F7D5D1C8D705C00C0BCBD /* lstSetting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lstSetting.plist; sourceTree = "<group>"; };
+		AB57D0EE1B81DDAE002D805D /* vcSaifzoneNoInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vcSaifzoneNoInternet.swift; sourceTree = "<group>"; };
+		AB57D0F11B81E7B5002D805D /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		AB57D0F21B81E7B5002D805D /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		AB57D0F31B81E7B5002D805D /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		AB57D0F41B81E7B5002D805D /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		AB57D0F51B81E7B5002D805D /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		AB57D0F61B81E7B5002D805D /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		AB57D0F71B81E7B5002D805D /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		AB57D0F81B81E7B5002D805D /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		AB57D0F91B81E7B5002D805D /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		AB57D0FE1B81EA14002D805D /* tbMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tbMenu.swift; sourceTree = "<group>"; };
+		AB57D1001B81EC14002D805D /* MainNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNav.swift; sourceTree = "<group>"; };
+		AB57D1021B81ECDB002D805D /* vcMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vcMenu.swift; sourceTree = "<group>"; };
+		AB57D1041B8214D2002D805D /* vcMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vcMap.swift; sourceTree = "<group>"; };
+		AB9A740E1CB63E340041FD91 /* loginbut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbut.png; sourceTree = "<group>"; };
+		AB9FFF351CB3ED10005DFFFD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB9FFF371CB3ED1B005DFFFD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		AB9FFF391CB3F9FB005DFFFD /* saif-zone-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "saif-zone-bg.jpg"; sourceTree = "<group>"; };
+		AB9FFF3A1CB3F9FB005DFFFD /* saif-zone-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "saif-zone-logo.png"; sourceTree = "<group>"; };
+		ABAAE8471B7B4B9C00352BE4 /* SAIF ZONE.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAIF ZONE.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABAAE84B1B7B4B9C00352BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABAAE84C1B7B4B9C00352BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABAAE84E1B7B4B9C00352BE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SaifZone/ViewController.swift; sourceTree = "<group>"; };
+		ABAAE8531B7B4B9D00352BE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABAAE8561B7B4B9D00352BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		ABAAE85C1B7B4B9D00352BE4 /* SAIF ZONE.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAIF ZONE.temp_caseinsensitive_rename.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABAAE8611B7B4B9D00352BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABAAE8621B7B4B9D00352BE4 /* SaifZoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaifZoneTests.swift; sourceTree = "<group>"; };
+		ABAAE86C1B7B4BB700352BE4 /* SaifZone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaifZone-Bridging-Header.h"; sourceTree = "<group>"; };
+		ABAAE86D1B7B4BB800352BE4 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		ABAAE86E1B7B4BB800352BE4 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		ABAAE86F1B7B4BB800352BE4 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		ABAAE8711B7B4BE100352BE4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		ABDECCC91BB92A0F00C770C8 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		ABDF99FC1BCB9D3800AF3CA9 /* HelpperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpperClass.swift; sourceTree = "<group>"; };
+		ABDF99FE1BCD01D800AF3CA9 /* SaifZone-568h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SaifZone-568h.jpg"; sourceTree = "<group>"; };
+		ABDF99FF1BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SaifZone-568h@2x.jpg"; sourceTree = "<group>"; };
+		ABE129CF1CBE3ABD00E30037 /* SAIF ZONE.temp_caseinsensitive_rename.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "SAIF ZONE.temp_caseinsensitive_rename.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABAAE8441B7B4B9C00352BE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9FFF381CB3ED1B005DFFFD /* CoreMedia.framework in Frameworks */,
+				AB9FFF361CB3ED10005DFFFD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABAAE8591B7B4B9D00352BE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB57D0F01B81E797002D805D /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				AB57D0F11B81E7B5002D805D /* MMDrawerBarButtonItem.h */,
+				AB57D0F21B81E7B5002D805D /* MMDrawerBarButtonItem.m */,
+				AB57D0F31B81E7B5002D805D /* MMDrawerController.h */,
+				AB57D0F41B81E7B5002D805D /* MMDrawerController.m */,
+				AB57D0F51B81E7B5002D805D /* MMDrawerController+Subclass.h */,
+				AB57D0F61B81E7B5002D805D /* MMDrawerVisualState.h */,
+				AB57D0F71B81E7B5002D805D /* MMDrawerVisualState.m */,
+				AB57D0F81B81E7B5002D805D /* UIViewController+MMDrawerController.h */,
+				AB57D0F91B81E7B5002D805D /* UIViewController+MMDrawerController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		ABAAE83E1B7B4B9C00352BE4 = {
+			isa = PBXGroup;
+			children = (
+				ABE129CF1CBE3ABD00E30037 /* SAIF ZONE.temp_caseinsensitive_rename.entitlements */,
+				AB9FFF371CB3ED1B005DFFFD /* CoreMedia.framework */,
+				AB9FFF351CB3ED10005DFFFD /* CoreGraphics.framework */,
+				AB1F7D5D1C8D705C00C0BCBD /* lstSetting.plist */,
+				AB120FA91BEB660A005CDE00 /* Mobile HTML Saif-Zone */,
+				ABD353441BA6A6E20075E242 /* Classes */,
+				AB57D0F01B81E797002D805D /* Menu */,
+				ABAAE8491B7B4B9C00352BE4 /* SaifZone */,
+				ABAAE85F1B7B4B9D00352BE4 /* SaifZoneTests */,
+				ABAAE8481B7B4B9C00352BE4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABAAE8481B7B4B9C00352BE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABAAE8471B7B4B9C00352BE4 /* SAIF ZONE.temp_caseinsensitive_rename.app */,
+				ABAAE85C1B7B4B9D00352BE4 /* SAIF ZONE.temp_caseinsensitive_rename.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABAAE8491B7B4B9C00352BE4 /* SaifZone */ = {
+			isa = PBXGroup;
+			children = (
+				52FEE0F9200CC4E100C11987 /* Utilities.swift */,
+				AB1EF2681B83306600812767 /* LocationAddress.swift */,
+				AB57D1001B81EC14002D805D /* MainNav.swift */,
+				520D866F200C77D2006B8AE3 /* UICheckBox.swift */,
+				ABD353451BA6A70E0075E242 /* helper */,
+				ABDECCCB1BBA76FC00C770C8 /* img */,
+				ABAAE8711B7B4BE100352BE4 /* Main.storyboard */,
+				ABAAE8531B7B4B9D00352BE4 /* Images.xcassets */,
+				ABAAE8551B7B4B9D00352BE4 /* LaunchScreen.xib */,
+				ABAAE84A1B7B4B9C00352BE4 /* Supporting Files */,
+				ABAAE86C1B7B4BB700352BE4 /* SaifZone-Bridging-Header.h */,
+			);
+			path = SaifZone;
+			sourceTree = "<group>";
+		};
+		ABAAE84A1B7B4B9C00352BE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABAAE84B1B7B4B9C00352BE4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABAAE85F1B7B4B9D00352BE4 /* SaifZoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABAAE8621B7B4B9D00352BE4 /* SaifZoneTests.swift */,
+				ABAAE8601B7B4B9D00352BE4 /* Supporting Files */,
+			);
+			path = SaifZoneTests;
+			sourceTree = "<group>";
+		};
+		ABAAE8601B7B4B9D00352BE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABAAE8611B7B4B9D00352BE4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABD353441BA6A6E20075E242 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AB1F7D5B1C8D69D100C0BCBD /* vcLogin.swift */,
+				AB57D0EE1B81DDAE002D805D /* vcSaifzoneNoInternet.swift */,
+				AB57D1041B8214D2002D805D /* vcMap.swift */,
+				AB57D1021B81ECDB002D805D /* vcMenu.swift */,
+				AB57D0FE1B81EA14002D805D /* tbMenu.swift */,
+				ABAAE84E1B7B4B9C00352BE4 /* ViewController.swift */,
+				525FAFA1200CB63200ACD2D6 /* EntryController.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		ABD353451BA6A70E0075E242 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				ABDF99FC1BCB9D3800AF3CA9 /* HelpperClass.swift */,
+				AB1D81A11BC51ACD0097A4E0 /* Reachability.swift */,
+				ABAAE84C1B7B4B9C00352BE4 /* AppDelegate.swift */,
+				ABAAE86D1B7B4BB800352BE4 /* Bridging-Header.h */,
+				ABAAE86E1B7B4BB800352BE4 /* MBProgressHUD.h */,
+				ABAAE86F1B7B4BB800352BE4 /* MBProgressHUD.m */,
+			);
+			name = helper;
+			sourceTree = "<group>";
+		};
+		ABDECCCB1BBA76FC00C770C8 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				AB9A740E1CB63E340041FD91 /* loginbut.png */,
+				AB9FFF391CB3F9FB005DFFFD /* saif-zone-bg.jpg */,
+				AB9FFF3A1CB3F9FB005DFFFD /* saif-zone-logo.png */,
+				ABDF99FE1BCD01D800AF3CA9 /* SaifZone-568h.jpg */,
+				ABDF99FF1BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg */,
+				ABDECCC91BB92A0F00C770C8 /* back.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABAAE8461B7B4B9C00352BE4 /* SAIF Zone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABAAE8661B7B4B9D00352BE4 /* Build configuration list for PBXNativeTarget "SAIF Zone" */;
+			buildPhases = (
+				ABAAE8431B7B4B9C00352BE4 /* Sources */,
+				ABAAE8441B7B4B9C00352BE4 /* Frameworks */,
+				ABAAE8451B7B4B9C00352BE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SAIF Zone";
+			productName = SaifZone;
+			productReference = ABAAE8471B7B4B9C00352BE4 /* SAIF ZONE.temp_caseinsensitive_rename.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABAAE85B1B7B4B9D00352BE4 /* SAIF ZoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABAAE8691B7B4B9D00352BE4 /* Build configuration list for PBXNativeTarget "SAIF ZoneTests" */;
+			buildPhases = (
+				ABAAE8581B7B4B9D00352BE4 /* Sources */,
+				ABAAE8591B7B4B9D00352BE4 /* Frameworks */,
+				ABAAE85A1B7B4B9D00352BE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABAAE85E1B7B4B9D00352BE4 /* PBXTargetDependency */,
+			);
+			name = "SAIF ZoneTests";
+			productName = SaifZoneTests;
+			productReference = ABAAE85C1B7B4B9D00352BE4 /* SAIF ZONE.temp_caseinsensitive_rename.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABAAE83F1B7B4B9C00352BE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "mai malash";
+				TargetAttributes = {
+					ABAAE8461B7B4B9C00352BE4 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = BZSB59QTTY;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					ABAAE85B1B7B4B9D00352BE4 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = SMU67T4BER;
+						LastSwiftMigration = 0800;
+						TestTargetID = ABAAE8461B7B4B9C00352BE4;
+					};
+				};
+			};
+			buildConfigurationList = ABAAE8421B7B4B9C00352BE4 /* Build configuration list for PBXProject "SAIF ZONE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABAAE83E1B7B4B9C00352BE4;
+			productRefGroup = ABAAE8481B7B4B9C00352BE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABAAE8461B7B4B9C00352BE4 /* SAIF Zone */,
+				ABAAE85B1B7B4B9D00352BE4 /* SAIF ZoneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABAAE8451B7B4B9C00352BE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9A740F1CB63E340041FD91 /* loginbut.png in Resources */,
+				ABDF9A001BCD01D800AF3CA9 /* SaifZone-568h.jpg in Resources */,
+				ABAAE8721B7B4BE100352BE4 /* Main.storyboard in Resources */,
+				ABDECCCA1BB92A0F00C770C8 /* back.png in Resources */,
+				AB1F7D5E1C8D705C00C0BCBD /* lstSetting.plist in Resources */,
+				AB9FFF3B1CB3F9FB005DFFFD /* saif-zone-bg.jpg in Resources */,
+				AB9FFF3C1CB3F9FB005DFFFD /* saif-zone-logo.png in Resources */,
+				ABAAE8571B7B4B9D00352BE4 /* LaunchScreen.xib in Resources */,
+				ABDF9A011BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg in Resources */,
+				AB120FAA1BEB660A005CDE00 /* Mobile HTML Saif-Zone in Resources */,
+				ABAAE8541B7B4B9D00352BE4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABAAE85A1B7B4B9D00352BE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABAAE8431B7B4B9C00352BE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1D81A21BC51ACD0097A4E0 /* Reachability.swift in Sources */,
+				AB1EF2691B83306600812767 /* LocationAddress.swift in Sources */,
+				ABAAE84F1B7B4B9C00352BE4 /* ViewController.swift in Sources */,
+				AB57D1051B8214D2002D805D /* vcMap.swift in Sources */,
+				ABAAE8701B7B4BB800352BE4 /* MBProgressHUD.m in Sources */,
+				AB57D0FA1B81E7B5002D805D /* MMDrawerBarButtonItem.m in Sources */,
+				AB57D0FD1B81E7B5002D805D /* UIViewController+MMDrawerController.m in Sources */,
+				AB57D1011B81EC14002D805D /* MainNav.swift in Sources */,
+				ABAAE84D1B7B4B9C00352BE4 /* AppDelegate.swift in Sources */,
+				AB57D0FF1B81EA14002D805D /* tbMenu.swift in Sources */,
+				AB1F7D5C1C8D69D100C0BCBD /* vcLogin.swift in Sources */,
+				520D8670200C77D2006B8AE3 /* UICheckBox.swift in Sources */,
+				525FAFA2200CB63200ACD2D6 /* EntryController.swift in Sources */,
+				52FEE0FA200CC4E100C11987 /* Utilities.swift in Sources */,
+				ABDF99FD1BCB9D3800AF3CA9 /* HelpperClass.swift in Sources */,
+				AB57D0FB1B81E7B5002D805D /* MMDrawerController.m in Sources */,
+				AB57D0EF1B81DDAE002D805D /* vcSaifzoneNoInternet.swift in Sources */,
+				AB57D0FC1B81E7B5002D805D /* MMDrawerVisualState.m in Sources */,
+				AB57D1031B81ECDB002D805D /* vcMenu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABAAE8581B7B4B9D00352BE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABAAE8631B7B4B9D00352BE4 /* SaifZoneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABAAE85E1B7B4B9D00352BE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABAAE8461B7B4B9C00352BE4 /* SAIF Zone */;
+			targetProxy = ABAAE85D1B7B4B9D00352BE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ABAAE8551B7B4B9D00352BE4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABAAE8561B7B4B9D00352BE4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABAAE8641B7B4B9D00352BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "66df831a-5058-4855-bded-98edcec909f1";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABAAE8651B7B4B9D00352BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "66df831a-5058-4855-bded-98edcec909f1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABAAE8671B7B4B9D00352BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "SAIF ZONE.temp_caseinsensitive_rename.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = BZSB59QTTY;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = SaifZone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SaifZone.SaifZone;
+				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos11.2;
+				SWIFT_OBJC_BRIDGING_HEADER = "./SaifZone/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ABAAE8681B7B4B9D00352BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "SAIF ZONE.temp_caseinsensitive_rename.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = BZSB59QTTY;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = SaifZone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SaifZone.SaifZone;
+				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos11.2;
+				SWIFT_OBJC_BRIDGING_HEADER = "./SaifZone/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ABAAE86A1B7B4B9D00352BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SaifZoneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ScopeLocation.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAIF ZONE.temp_caseinsensitive_rename.app/SAIF ZONE.temp_caseinsensitive_rename";
+			};
+			name = Debug;
+		};
+		ABAAE86B1B7B4B9D00352BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SaifZoneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ScopeLocation.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAIF ZONE.temp_caseinsensitive_rename.app/SAIF ZONE.temp_caseinsensitive_rename";
+			};
+			name = Release;
+		};
+		ABC704F61B84590F00B25E9F /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "66df831a-5058-4855-bded-98edcec909f1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		ABC704F71B84590F00B25E9F /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "SAIF ZONE.temp_caseinsensitive_rename.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = BZSB59QTTY;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = SaifZone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SaifZone.SaifZone;
+				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos11.2;
+				SWIFT_OBJC_BRIDGING_HEADER = "./SaifZone/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Distribution;
+		};
+		ABC704F81B84590F00B25E9F /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SaifZoneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ScopeLocation.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAIF ZONE.temp_caseinsensitive_rename.app/SAIF ZONE.temp_caseinsensitive_rename";
+			};
+			name = Distribution;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABAAE8421B7B4B9C00352BE4 /* Build configuration list for PBXProject "SAIF ZONE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABAAE8641B7B4B9D00352BE4 /* Debug */,
+				ABAAE8651B7B4B9D00352BE4 /* Release */,
+				ABC704F61B84590F00B25E9F /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABAAE8661B7B4B9D00352BE4 /* Build configuration list for PBXNativeTarget "SAIF Zone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABAAE8671B7B4B9D00352BE4 /* Debug */,
+				ABAAE8681B7B4B9D00352BE4 /* Release */,
+				ABC704F71B84590F00B25E9F /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABAAE8691B7B4B9D00352BE4 /* Build configuration list for PBXNativeTarget "SAIF ZoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABAAE86A1B7B4B9D00352BE4 /* Debug */,
+				ABAAE86B1B7B4B9D00352BE4 /* Release */,
+				ABC704F81B84590F00B25E9F /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABAAE83F1B7B4B9C00352BE4 /* Project object */;
+}

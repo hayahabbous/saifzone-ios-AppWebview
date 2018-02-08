@@ -7,40 +7,148 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    var  centerContainer : MMDrawerController?
+    var kStatusBarTappedNotification : String = "statusBarTappedNotification"
+   
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        registerForPushNotifications()
         return true
     }
-
-    func applicationWillResignActive(application: UIApplication) {
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        if (application.applicationState == UIApplicationState.background) {
+//            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadView"), object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken! )
+            
+            let notificationName = Notification.Name("NotificationIdentifier")
+            
+            // Register to receive notification
+            //                    NotificationCenter.default.addObserver(self, selector: #selector(YourClassName.methodOfReceivedNotification), name: notificationName, object: nil)
+            //
+            // Post notification
+            NotificationCenter.default.post(name: notificationName, object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken!)
+            
+            // Stop listening notification
+            NotificationCenter.default.removeObserver(self, name: notificationName, object: nil)
+        }else
+            
+        {
+            if let notification = userInfo["aps"] as? NSDictionary,
+                let _ = notification["alert"] as? String {
+               // var _ : String = ( notification["alert"] as? String)! +  (notification["url"] as? String)!
+                let alertCtrl = UIAlertController(title: "SAIF ZONE", message: notification["alert"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) {
+                    UIAlertAction in
+                    
+//                    NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadView"), object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken! )
+//
+                    
+                    // Define identifier
+                    let notificationName = Notification.Name("NotificationIdentifier")
+                    
+                    // Register to receive notification
+//                    NotificationCenter.default.addObserver(self, selector: #selector(YourClassName.methodOfReceivedNotification), name: notificationName, object: nil)
+//
+                    // Post notification
+                    NotificationCenter.default.post(name: notificationName, object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken!)
+                    
+                    // Stop listening notification
+                    NotificationCenter.default.removeObserver(self, name: notificationName, object: nil)
+                    alertCtrl.dismiss(animated: true, completion: nil)
+                    
+                }
+                alertCtrl.addAction(okAction)
+                // Find the presented VC...
+                var presentedVC = self.window?.rootViewController
+                while (presentedVC!.presentedViewController != nil)  {
+                    presentedVC = presentedVC!.presentedViewController
+                }
+                presentedVC!.present(alertCtrl, animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches,with: event)
+        //var location : CGPoint = event.allTouches().
+        let touch = touches.first
+        let point : CGPoint = touch!.location(in: self.window)
+        let statusBarFrame : CGRect = UIApplication.shared.statusBarFrame
+        if (statusBarFrame.contains(point)) {
+            self.statusBarTouchedAction()
+        }
+        
+    }
+    var strdeviceToken : String!
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        strdeviceToken = tokenParts.joined()
+        let defaults = UserDefaults.standard
+        defaults.set(strdeviceToken, forKey: "deviceID")
+        print("<<<<<<<<<<<<\(String(describing: strdeviceToken))>>>>>>>>>>>>>>")
+        
+    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+        print("Failed to register: \(error)")
+       
+        
+    }
+    
+    func statusBarTouchedAction() {
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: kStatusBarTappedNotification), object: nil)
+    }
+    
+    
+    
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
-
-    func applicationDidEnterBackground(application: UIApplication) {
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
-    func applicationWillEnterForeground(application: UIApplication) {
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
-
-    func applicationDidBecomeActive(application: UIApplication) {
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
-    func applicationWillTerminate(application: UIApplication) {
+    
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            print("Permission granted: \(granted)")
+            guard granted else { return }
+            self.getNotificationSettings()
+        }
+    }
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.registerForRemoteNotifications()
+            })         }
+    }
 }
 
