@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 
-class vcLogin: UIViewController ,UITextFieldDelegate{
+class vcLogin: UIViewController ,UITextFieldDelegate, UIScrollViewDelegate{
     
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -26,8 +26,8 @@ class vcLogin: UIViewController ,UITextFieldDelegate{
     let dataSource : [String] = ["Investor","Employee"]
     let urlSource : [String] = ["GetValue","GetStaffValue"]
     let tokenSource : [String] = ["mPortal","hr"]
-
-
+    
+    
     var selectedUserType : Int = 0
     
     
@@ -36,6 +36,7 @@ class vcLogin: UIViewController ,UITextFieldDelegate{
         _btnLogin.imageView!.contentMode = UIViewContentMode.scaleAspectFit
         txtUserName.delegate = self
         txtPassword.delegate = self
+        scrollView.delegate = self
         // Do any additional setup after loading the view.
         let loginInfo : NSDictionary = helper.LoadData()
         if let dict  : NSDictionary = loginInfo {
@@ -52,17 +53,6 @@ class vcLogin: UIViewController ,UITextFieldDelegate{
         else {
             print("WARNING: Couldn't create dictionary from SettingLst.plist! Default values will be used!")
         }
-        
-        //8d1e1b
-        
-//        UIGraphicsBeginImageContext(self.view.frame.size)
-//        UIImage(named: "saif-zone-bg.jpg")?.draw(in: self.view.bounds)
-//        
-//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-//        
-//        UIGraphicsEndImageContext()
-//        
-//        self.view.backgroundColor = UIColor(patternImage: image)
         checkBox.isChecked = true
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 27, height: 27))
@@ -74,7 +64,7 @@ class vcLogin: UIViewController ,UITextFieldDelegate{
         initPickerView()
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x != 0 {
             scrollView.contentOffset.x = 0
         }
@@ -183,8 +173,8 @@ class vcLogin: UIViewController ,UITextFieldDelegate{
         
         //let url :String = "http://devdpa.saif-zone.com/authenticate/GetValue/" + txtUserName.text! + "/" + txtPassword.text! + "/" + name
         let url :String =  "http://ws.saif-zone.com:7777/authenticate/\(urlSource[selectedUserType])/" + txtUserName.text! + "/" + txtPassword.text! + "/" + name
-        print("##########################\(url)")
-       
+        print("Login URL : \(url)")
+        
         let loginUrl = URL(string: url)
         var getRequest = URLRequest(url: loginUrl!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30.0)
         getRequest.httpMethod = "GET"
@@ -252,83 +242,7 @@ class vcLogin: UIViewController ,UITextFieldDelegate{
                 print("######",error)
                 
             }
-            }).resume()
-        
-//        let request : NSMutableURLRequest = NSMutableURLRequest()
-//        request.url = URL(string: url)
-//
-//
-//        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue(), completionHandler:{ (response:URLResponse?, data: Data?, error: Error?) -> Void in
-//            var _: AutoreleasingUnsafeMutablePointer<NSError?>? = nil
-//
-//            do
-//
-//            {                guard data != nil else{
-//                    DispatchQueue.main.async(execute: {
-//                        let alertController = UIAlertController(title: "Login Failed", message:
-//                            "Please check that userName and password are correct", preferredStyle: UIAlertControllerStyle.alert)
-//                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-//
-//                        self.present(alertController, animated: true, completion: nil)
-//
-//                    })
-//                    return
-//                }
-//
-//                let jsonResult :NSDictionary! = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-//
-//                if (jsonResult != nil) {
-//                    // process jsonResult
-//
-//                    if jsonResult!.value(forKey: "AuthResult")  as! String != "NOTAUTHORIZED"
-//                    {
-//                        self.SaveLoginInfo()
-//                        DispatchQueue.main.async(execute: {
-//
-//
-//                            // vc.Url = "http://dev.saif-zone.com/en/m/Pages/ConsumeToken.aspx?TokenID=" + (jsonResult!.valueForKey("AuthResult")  as! String)
-//                            // UserDefaults.standard.set("http://devdpm.saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String), forKey: "URL")
-//
-//                            UserDefaults.standard.set(self.urlSource[self.selectedUserType], forKey: "userType")
-//                              UserDefaults.standard.set(self.tokenSource[self.selectedUserType], forKey: "tokenType")
-//                            UserDefaults.standard.set("http://\(self.tokenSource[self.selectedUserType]).saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String), forKey: "URL")
-//                            self.dismiss(animated: true, completion: nil)
-//
-//                        })
-//
-//                    }
-//                    else
-//                    {
-//                        DispatchQueue.main.async(execute: {
-//                            let alertController = UIAlertController(title: "Login Failed", message:
-//                                "Please check that userName and password are correct", preferredStyle: UIAlertControllerStyle.alert)
-//                            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-//
-//                            self.present(alertController, animated: true, completion: nil)
-//
-//                        })
-//
-//                    }
-//                } else {
-//                    print("No Data")
-//                    // couldn't load JSON, look at error
-//                }
-//
-//            }
-//            catch
-//            {
-//                print("######",error)
-//
-//            }
-//
-//
-//        })
-        
-        
-        
-        
-        
-        
+        }).resume()
         
         
     }
@@ -445,7 +359,7 @@ class vcLogin: UIViewController ,UITextFieldDelegate{
         
         
     }
-   
+    
     /*
      // MARK: - Navigation
      

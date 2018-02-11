@@ -57,7 +57,6 @@ class ViewController : UIViewController, WKNavigationDelegate{
             Utilities().showAlert(message: "Please check internet connetion", isRefresh : true,actionMessage : "Refresh", controller: self)
             return
         }
-        print("****** Get Data ******")
         let urlOther :String = UserDefaults.standard.object(forKey: "URL") as! String
         let url : URL = URL(string : urlOther)!
         let request = URLRequest(url: url)
@@ -76,7 +75,7 @@ class ViewController : UIViewController, WKNavigationDelegate{
         
         if clickedUrl.contains("Login.aspx") || clickedUrl == "http://mportal.saif-zone.com/"
         {
-            print("**LOGIN CLICKED*\(clickedUrl)")
+
             decisionHandler(WKNavigationActionPolicy.cancel)
             let secure = UserDefaults.standard.object(forKey: "secure") ?? "false"
             let autoLogin = UserDefaults.standard.object(forKey: "autoLogin")  ?? "false"
@@ -137,7 +136,6 @@ extension ViewController {
             localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reasonString) { success, evaluateError in
                 
                 if success {
-                    print("SUCCESS")
                     //TODO: User authenticated successfully, take appropriate action
                     self.tryForLogin()
                 } else {
@@ -183,7 +181,6 @@ extension ViewController {
         
         let url :String = "http://ws.saif-zone.com:7777/authenticate/\(UserDefaults.standard.object(forKey: "userType") as! String)/\(UserDefaults.standard.object(forKey: "userName")  as! String)/\(UserDefaults.standard.object(forKey: "password")  as! String)/\(name)"
         // let url :String =  "http://ws.saif-zone.com:7777/authenticate/GetValue/" + txtUserName.text! + "/" + txtPassword.text! + "/" + name
-        print("*****LOGIN URL*****\(url)")
         
         let loginUrl = URL(string: url)
         var getRequest = URLRequest(url: loginUrl!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30.0)
@@ -206,7 +203,6 @@ extension ViewController {
             
                                 if jsonResult!.value(forKey: "AuthResult")  as! String != "NOTAUTHORIZED"
                                 {
-                                    print("AUTO LOGIN SUCCESS")
                                     DispatchQueue.main.async(execute: {
             
                                         // vc.Url = "http://dev.saif-zone.com/en/m/Pages/ConsumeToken.aspx?TokenID=" + (jsonResult!.valueForKey("AuthResult")  as! String)
@@ -240,62 +236,6 @@ extension ViewController {
                         }
             }).resume()
         
-//        let request : NSMutableURLRequest = NSMutableURLRequest()
-//        request.url = URL(string: url)
-//
-//
-//        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue(), completionHandler:{ (response:URLResponse?, data: Data?, error: Error?) -> Void in
-//            var _: AutoreleasingUnsafeMutablePointer<NSError?>? = nil
-//
-//            do
-//
-//            {
-//                guard data != nil else{
-//                return
-//                }
-//
-//                let jsonResult :NSDictionary! = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-//
-//                if (jsonResult != nil) {
-//                    // process jsonResult
-//
-//                    if jsonResult!.value(forKey: "AuthResult")  as! String != "NOTAUTHORIZED"
-//                    {
-//                        print("AUTO LOGIN SUCCESS")
-//                        DispatchQueue.main.async(execute: {
-//
-//                            // vc.Url = "http://dev.saif-zone.com/en/m/Pages/ConsumeToken.aspx?TokenID=" + (jsonResult!.valueForKey("AuthResult")  as! String)
-//                            // UserDefaults.standard.set("http://devdpm.saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String), forKey: "URL")
-//
-//                            //                            self.Url = "http://devdpm.saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String)
-//                            // self.MainFunc()
-//                            UserDefaults.standard.set("http://\(UserDefaults.standard.object(forKey: "tokenType") as! String).saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String),forKey: "URL")
-//                            self.getData()
-//
-//                        })
-//
-//                    }
-//                    else
-//                    {
-//                        DispatchQueue.main.async(execute: {
-//                            self.gotoLoginPage()
-//                        })
-//
-//                    }
-//                } else {
-//                    print("No Data")
-//                    // couldn't load JSON, look at error
-//                }
-//
-//            }
-//            catch
-//            {
-//                print(error)
-//
-//            }
-//
-//
-//        })
         
     }
     
