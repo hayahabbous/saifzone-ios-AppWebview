@@ -15,7 +15,10 @@ class ViewController : UIViewController, WKNavigationDelegate{
     
     @IBOutlet weak var uiView: UIView!
     @IBOutlet weak var landingWebView: WKWebView!
-    var isLoading : Bool = false
+    var isLoading : Bool = true
+    var completedUrl : String = ""
+    var startUrl : String = ""
+    var popvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "progressPopUp") as! ProgressPopUp
     // var Url : String = "http://saif-zone.com/en/m/Pages/default.aspx"
     @IBAction func onBackClick(_ sender: Any) {
         gotoLoginPage()
@@ -24,12 +27,11 @@ class ViewController : UIViewController, WKNavigationDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: Selector(("touchStatusBar")), name:NSNotification.Name(rawValue: "statusBarTappedNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.touchStatusBar), name:NSNotification.Name(rawValue: "statusBarTappedNotification"), object: nil)
         landingWebView.navigationDelegate = self
         uiView.isHidden = true
         UserDefaults.standard.set("http://saif-zone.com/en/m/Pages/default.aspx", forKey: "URL")
         // createStatusBar()
-        
         NotificationCenter.default.addObserver(self, selector: Selector(("reloadData:")), name: NSNotification.Name(rawValue: "reloadView"), object: nil)
         
         
@@ -67,6 +69,7 @@ class ViewController : UIViewController, WKNavigationDelegate{
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let clickedUrl : String = (navigationAction.request.mainDocumentURL?.absoluteString)!
         print("**CLICKED URL*\(clickedUrl)")
+        startUrl = clickedUrl;
         guard Utilities().isInternetAvailable() == true else{
             Utilities().showAlert(message: "Please check internet connetion", isRefresh : true,actionMessage : "Refresh", controller: self)
             decisionHandler(WKNavigationActionPolicy.cancel)
@@ -75,7 +78,7 @@ class ViewController : UIViewController, WKNavigationDelegate{
         
         if clickedUrl.contains("Login.aspx") || clickedUrl == "http://mportal.saif-zone.com/"
         {
-
+            
             decisionHandler(WKNavigationActionPolicy.cancel)
             let secure = UserDefaults.standard.object(forKey: "secure") ?? "false"
             let autoLogin = UserDefaults.standard.object(forKey: "autoLogin")  ?? "false"
@@ -99,16 +102,27 @@ class ViewController : UIViewController, WKNavigationDelegate{
             UserDefaults.standard.set("http://saif-zone.com/en/m/Pages/default.aspx", forKey: "URL")
             getData()
         }
-        
-        
-        
+        if(startUrl.contains("http://saif-zone.com/en/m/Pages/PDFViewer.aspx")){
+            decisionHandler(WKNavigationActionPolicy.cancel)
+            UIApplication.shared.open(URL(string : startUrl)!, options: [:], completionHandler: { (status) in
+                
+            })
+            return
+        }
+        if(clickedUrl.contains("TokenID=") == true){
+            showProgress()
+           // helper.showProgress("Loading...", view: self.view)
+            
+        }
         decisionHandler(WKNavigationActionPolicy.allow)
+        
         
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Finished navigating to url \(String(describing: webView.url))");
         let clickedUrl : String = (webView.url?.absoluteString)!
+        print("Finished navigating to url \(clickedUrl)");
+        
         if(clickedUrl.contains("pdf") || clickedUrl.contains("RegisterNewUser.aspx") || clickedUrl.contains("ForgotPassword.aspx")){
             uiView.isHidden = false
             
@@ -116,10 +130,12 @@ class ViewController : UIViewController, WKNavigationDelegate{
             uiView.isHidden = true
             
         }
+        if(clickedUrl.contains("TokenID=") == true){
+       // helper.hideProgress(self.view)
+        hideProgress()
+        }
+        
     }
-    
-    
-    
 }
 
 extension ViewController {
@@ -157,7 +173,7 @@ extension ViewController {
             //TODO: Show appropriate alert if biometry/TouchID/FaceID is lockout or not enrolled
             print(self.evaluateAuthenticationPolicyMessageForLA(errorCode: error.code))
             self.tryForLogin()
-
+            
         }
     }
     
@@ -187,54 +203,54 @@ extension ViewController {
         getRequest.httpMethod = "GET"
         getRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         getRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-       
+        
         URLSession.shared.dataTask(with: getRequest, completionHandler: { (data, response, error) in
             do
-            
-                        {
-                            guard data != nil else{
-                            return
-                            }
-            
-                            let jsonResult :NSDictionary! = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-            
-                            if (jsonResult != nil) {
-                                // process jsonResult
-            
-                                if jsonResult!.value(forKey: "AuthResult")  as! String != "NOTAUTHORIZED"
-                                {
-                                    DispatchQueue.main.async(execute: {
-            
-                                        // vc.Url = "http://dev.saif-zone.com/en/m/Pages/ConsumeToken.aspx?TokenID=" + (jsonResult!.valueForKey("AuthResult")  as! String)
-                                        // UserDefaults.standard.set("http://devdpm.saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String), forKey: "URL")
-            
-                                        //                            self.Url = "http://devdpm.saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String)
-                                        // self.MainFunc()
-                                        UserDefaults.standard.set("http://\(UserDefaults.standard.object(forKey: "tokenType") as! String).saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String),forKey: "URL")
-                                        self.getData()
-            
-                                    })
-            
-                                }
-                                else
-                                {
-                                    DispatchQueue.main.async(execute: {
-                                        self.gotoLoginPage()
-                                    })
-            
-                                }
-                            } else {
-                                print("No Data")
-                                // couldn't load JSON, look at error
-                            }
-            
-                        }
-                        catch
-                        {
-                            print(error)
-            
-                        }
-            }).resume()
+                
+            {
+                guard data != nil else{
+                    return
+                }
+                
+                let jsonResult :NSDictionary! = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                
+                if (jsonResult != nil) {
+                    // process jsonResult
+                    
+                    if jsonResult!.value(forKey: "AuthResult")  as! String != "NOTAUTHORIZED"
+                    {
+                        DispatchQueue.main.async(execute: {
+                            
+                            // vc.Url = "http://dev.saif-zone.com/en/m/Pages/ConsumeToken.aspx?TokenID=" + (jsonResult!.valueForKey("AuthResult")  as! String)
+                            // UserDefaults.standard.set("http://devdpm.saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String), forKey: "URL")
+                            
+                            //                            self.Url = "http://devdpm.saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String)
+                            // self.MainFunc()
+                            UserDefaults.standard.set("http://\(UserDefaults.standard.object(forKey: "tokenType") as! String).saif-zone.com/ConsumeToken.aspx?TokenID=" + (jsonResult!.value(forKey: "AuthResult")  as! String),forKey: "URL")
+                            self.getData()
+                            
+                        })
+                        
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async(execute: {
+                            self.gotoLoginPage()
+                        })
+                        
+                    }
+                } else {
+                    print("No Data")
+                    // couldn't load JSON, look at error
+                }
+                
+            }
+            catch
+            {
+                print(error)
+                
+            }
+        }).resume()
         
         
     }
@@ -309,6 +325,60 @@ extension ViewController {
         }
         
         return message
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches,with: event)
+        self.touchStatusBar()
+        
+    }
+    func touchStatusBar()
+    {
+        //  dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        //var top : CGPoint  = CGPointMake(0, -UIScreen.mainScreen().bounds.size.height+20)// can also use CGPointZero here
+        
+        //self.MyscrollView.setContentOffset(CGPointZero, animated:true)
+        // self.wvSafeZone.scrollView.setContentOffset(CGPointMake(0 , -self.wvSafeZone.scrollView.contentInset.top), animated:true)
+        //self.wvSafeZone.scrollView.setContentOffset(CGPointMake(0,  -UIApplication.sharedApplication().statusBarFrame.height ), animated: true)
+        
+        // self.wvSafeZone.scrollView.setContentOffset(CGPointMake(0, -self.wvSafeZone.scrollView.frame.height   + UIApplication.sharedApplication().statusBarFrame.height ), animated: true)
+        // self.wvSafeZone.scrollView.setContentOffset(CGPointMake(0, 0 - self.wvSafeZone.scrollView.contentInset.top), animated: true)
+        //self.wvSafeZone.scrollView.scrollsToTop = true
+        // self.wvSafeZone.scrollView.contentOffset = CGPointMake(0, -100);
+        //  ((UIScrollView*)[webView.subviews objectAtIndex:0]).scrollsToTop = YES;
+        // self.wvSafeZone.reload()
+        
+        print("top")
+        //    wvSafeZone.scrollView.scrollsToTop = true
+        //wvSafeZone.subviews..setContentOffset(top, animated: true)
+        // wvSafeZone.scrollView.setContentOffset(top, animated: true)
+        
+        //var script : NSString = "$('html, body').animate({scrollTop:0}, 'slow')"
+        let script : NSString = "GotoTop();"
+        //landingWebView.stringByEvaluatingJavaScript(from: script as String)
+        //[webView stringByEvaluatingJavaScriptFromString:script];
+        
+        
+        landingWebView.scrollView.scrollsToTop = true
+        
+    }
+    
+    
+    func showProgress(){
+        
+        self.addChildViewController(popvc)
+        
+        popvc.view.frame = self.view.frame
+        
+        self.view.addSubview(popvc.view)
+        
+        popvc.didMove(toParentViewController: self)
+    }
+    
+    func hideProgress(){
+        popvc.removeFromParentViewController()
+        popvc.didMove(toParentViewController: nil)
+        popvc.view.removeFromSuperview()
+
     }
 }
 

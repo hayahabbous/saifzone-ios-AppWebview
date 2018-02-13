@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		520D8670200C77D2006B8AE3 /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D866F200C77D2006B8AE3 /* UICheckBox.swift */; };
 		525FAFA2200CB63200ACD2D6 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FAFA1200CB63200ACD2D6 /* EntryController.swift */; };
+		52C1924E2032F8240022657B /* ProgressPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1924D2032F8240022657B /* ProgressPopUp.swift */; };
 		52FEE0FA200CC4E100C11987 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEE0F9200CC4E100C11987 /* Utilities.swift */; };
 		AB120FAA1BEB660A005CDE00 /* Mobile HTML Saif-Zone in Resources */ = {isa = PBXBuildFile; fileRef = AB120FA91BEB660A005CDE00 /* Mobile HTML Saif-Zone */; };
 		AB1D81A21BC51ACD0097A4E0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D81A11BC51ACD0097A4E0 /* Reachability.swift */; };
@@ -36,7 +37,6 @@
 		ABAAE8631B7B4B9D00352BE4 /* SaifZoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAAE8621B7B4B9D00352BE4 /* SaifZoneTests.swift */; };
 		ABAAE8701B7B4BB800352BE4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAAE86F1B7B4BB800352BE4 /* MBProgressHUD.m */; };
 		ABAAE8721B7B4BE100352BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAAE8711B7B4BE100352BE4 /* Main.storyboard */; };
-		ABDECCCA1BB92A0F00C770C8 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDECCC91BB92A0F00C770C8 /* back.png */; };
 		ABDF99FD1BCB9D3800AF3CA9 /* HelpperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDF99FC1BCB9D3800AF3CA9 /* HelpperClass.swift */; };
 		ABDF9A001BCD01D800AF3CA9 /* SaifZone-568h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDF99FE1BCD01D800AF3CA9 /* SaifZone-568h.jpg */; };
 		ABDF9A011BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDF99FF1BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg */; };
@@ -55,6 +55,7 @@
 /* Begin PBXFileReference section */
 		520D866F200C77D2006B8AE3 /* UICheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
 		525FAFA1200CB63200ACD2D6 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		52C1924D2032F8240022657B /* ProgressPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPopUp.swift; sourceTree = "<group>"; };
 		52FEE0F9200CC4E100C11987 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AB120FA91BEB660A005CDE00 /* Mobile HTML Saif-Zone */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Mobile HTML Saif-Zone"; sourceTree = "<group>"; };
 		AB1D81A11BC51ACD0097A4E0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		ABAAE86E1B7B4BB800352BE4 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		ABAAE86F1B7B4BB800352BE4 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		ABAAE8711B7B4BE100352BE4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		ABDECCC91BB92A0F00C770C8 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		ABDF99FC1BCB9D3800AF3CA9 /* HelpperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpperClass.swift; sourceTree = "<group>"; };
 		ABDF99FE1BCD01D800AF3CA9 /* SaifZone-568h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SaifZone-568h.jpg"; sourceTree = "<group>"; };
 		ABDF99FF1BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SaifZone-568h@2x.jpg"; sourceTree = "<group>"; };
@@ -176,6 +176,7 @@
 				ABAAE8551B7B4B9D00352BE4 /* LaunchScreen.xib */,
 				ABAAE84A1B7B4B9C00352BE4 /* Supporting Files */,
 				ABAAE86C1B7B4BB700352BE4 /* SaifZone-Bridging-Header.h */,
+				52C1924D2032F8240022657B /* ProgressPopUp.swift */,
 			);
 			path = SaifZone;
 			sourceTree = "<group>";
@@ -240,7 +241,6 @@
 				AB9FFF3A1CB3F9FB005DFFFD /* saif-zone-logo.png */,
 				ABDF99FE1BCD01D800AF3CA9 /* SaifZone-568h.jpg */,
 				ABDF99FF1BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg */,
-				ABDECCC91BB92A0F00C770C8 /* back.png */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -345,7 +345,6 @@
 				AB9A740F1CB63E340041FD91 /* loginbut.png in Resources */,
 				ABDF9A001BCD01D800AF3CA9 /* SaifZone-568h.jpg in Resources */,
 				ABAAE8721B7B4BE100352BE4 /* Main.storyboard in Resources */,
-				ABDECCCA1BB92A0F00C770C8 /* back.png in Resources */,
 				AB1F7D5E1C8D705C00C0BCBD /* lstSetting.plist in Resources */,
 				AB9FFF3B1CB3F9FB005DFFFD /* saif-zone-bg.jpg in Resources */,
 				AB9FFF3C1CB3F9FB005DFFFD /* saif-zone-logo.png in Resources */,
@@ -389,6 +388,7 @@
 				AB57D0EF1B81DDAE002D805D /* vcSaifzoneNoInternet.swift in Sources */,
 				AB57D0FC1B81E7B5002D805D /* MMDrawerVisualState.m in Sources */,
 				AB57D1031B81ECDB002D805D /* vcMenu.swift in Sources */,
+				52C1924E2032F8240022657B /* ProgressPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

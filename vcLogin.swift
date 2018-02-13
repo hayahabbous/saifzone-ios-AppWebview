@@ -331,7 +331,6 @@ class vcLogin: UIViewController ,UITextFieldDelegate, UIScrollViewDelegate{
         }
         UserDefaults.standard.set("https://www.saif-zone.com/en/Services/Documents/OnlineRegistrationProcess.pdf", forKey: "URL")
         
-        
         dismiss(animated: true, completion: nil)
         
         
