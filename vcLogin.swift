@@ -79,11 +79,11 @@ class vcLogin: UIViewController ,UITextFieldDelegate, UIScrollViewDelegate{
                                                name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func keyboardWillHide() {
+    @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
     
-    func keyboardWillChange(notification: NSNotification) {
+    @objc func keyboardWillChange(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             self.view.frame.origin.y = -keyboardSize.height/2
@@ -119,7 +119,7 @@ class vcLogin: UIViewController ,UITextFieldDelegate, UIScrollViewDelegate{
         pickerTool.isUserInteractionEnabled = true
         pickerUi.inputAccessoryView = pickerTool
     }
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         pickerUi.endEditing(true)
     }
     override func viewDidLayoutSubviews() {

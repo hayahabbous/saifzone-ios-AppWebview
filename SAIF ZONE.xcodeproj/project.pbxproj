@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E14E1D7BF0B1C7E48C2246B /* Pods_SAIF_Zone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E45CC3DCA09CB0CCE9F5C1 /* Pods_SAIF_Zone.framework */; };
 		520D8670200C77D2006B8AE3 /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D866F200C77D2006B8AE3 /* UICheckBox.swift */; };
 		525FAFA2200CB63200ACD2D6 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FAFA1200CB63200ACD2D6 /* EntryController.swift */; };
 		52C1924E2032F8240022657B /* ProgressPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1924D2032F8240022657B /* ProgressPopUp.swift */; };
+		52CC77E820502BE8007D96E8 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC77E720502BE8007D96E8 /* NotificationController.swift */; };
 		52FEE0FA200CC4E100C11987 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEE0F9200CC4E100C11987 /* Utilities.swift */; };
 		AB120FAA1BEB660A005CDE00 /* Mobile HTML Saif-Zone in Resources */ = {isa = PBXBuildFile; fileRef = AB120FA91BEB660A005CDE00 /* Mobile HTML Saif-Zone */; };
 		AB1D81A21BC51ACD0097A4E0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D81A11BC51ACD0097A4E0 /* Reachability.swift */; };
@@ -56,7 +58,10 @@
 		520D866F200C77D2006B8AE3 /* UICheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
 		525FAFA1200CB63200ACD2D6 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		52C1924D2032F8240022657B /* ProgressPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPopUp.swift; sourceTree = "<group>"; };
+		52CC77E720502BE8007D96E8 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		52FEE0F9200CC4E100C11987 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		6B887BDC4469F5B628D625B8 /* Pods-SAIF Zone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAIF Zone.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAIF Zone/Pods-SAIF Zone.release.xcconfig"; sourceTree = "<group>"; };
+		922466DBD2C54C952C6B4930 /* Pods-SAIF Zone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAIF Zone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAIF Zone/Pods-SAIF Zone.debug.xcconfig"; sourceTree = "<group>"; };
 		AB120FA91BEB660A005CDE00 /* Mobile HTML Saif-Zone */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Mobile HTML Saif-Zone"; sourceTree = "<group>"; };
 		AB1D81A11BC51ACD0097A4E0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AB1EF2681B83306600812767 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAddress.swift; path = ../LocationAddress.swift; sourceTree = "<group>"; };
@@ -99,6 +104,8 @@
 		ABDF99FE1BCD01D800AF3CA9 /* SaifZone-568h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SaifZone-568h.jpg"; sourceTree = "<group>"; };
 		ABDF99FF1BCD01D800AF3CA9 /* SaifZone-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SaifZone-568h@2x.jpg"; sourceTree = "<group>"; };
 		ABE129CF1CBE3ABD00E30037 /* SAIF ZONE.temp_caseinsensitive_rename.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "SAIF ZONE.temp_caseinsensitive_rename.entitlements"; sourceTree = "<group>"; };
+		E775DBA4CF7FCF67A8744D27 /* Pods-SAIF Zone.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAIF Zone.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-SAIF Zone/Pods-SAIF Zone.distribution.xcconfig"; sourceTree = "<group>"; };
+		E9E45CC3DCA09CB0CCE9F5C1 /* Pods_SAIF_Zone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAIF_Zone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +115,7 @@
 			files = (
 				AB9FFF381CB3ED1B005DFFFD /* CoreMedia.framework in Frameworks */,
 				AB9FFF361CB3ED10005DFFFD /* CoreGraphics.framework in Frameworks */,
+				0E14E1D7BF0B1C7E48C2246B /* Pods_SAIF_Zone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +129,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A093FDB6BD2004489DC15AE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9E45CC3DCA09CB0CCE9F5C1 /* Pods_SAIF_Zone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A20B4F112408DF103122F7A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				922466DBD2C54C952C6B4930 /* Pods-SAIF Zone.debug.xcconfig */,
+				6B887BDC4469F5B628D625B8 /* Pods-SAIF Zone.release.xcconfig */,
+				E775DBA4CF7FCF67A8744D27 /* Pods-SAIF Zone.distribution.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AB57D0F01B81E797002D805D /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +176,8 @@
 				ABAAE8491B7B4B9C00352BE4 /* SaifZone */,
 				ABAAE85F1B7B4B9D00352BE4 /* SaifZoneTests */,
 				ABAAE8481B7B4B9C00352BE4 /* Products */,
+				A20B4F112408DF103122F7A7 /* Pods */,
+				A093FDB6BD2004489DC15AE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +244,7 @@
 				AB57D0FE1B81EA14002D805D /* tbMenu.swift */,
 				ABAAE84E1B7B4B9C00352BE4 /* ViewController.swift */,
 				525FAFA1200CB63200ACD2D6 /* EntryController.swift */,
+				52CC77E720502BE8007D96E8 /* NotificationController.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -252,9 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABAAE8661B7B4B9D00352BE4 /* Build configuration list for PBXNativeTarget "SAIF Zone" */;
 			buildPhases = (
+				5D2CB8932D42E3520A3C08F4 /* [CP] Check Pods Manifest.lock */,
 				ABAAE8431B7B4B9C00352BE4 /* Sources */,
 				ABAAE8441B7B4B9C00352BE4 /* Frameworks */,
 				ABAAE8451B7B4B9C00352BE4 /* Resources */,
+				18B1825A198C840FFF399C2F /* [CP] Embed Pods Frameworks */,
+				DA5BEE7CD73753DE2F42BCFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,6 +396,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18B1825A198C840FFF399C2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SAIF Zone/Pods-SAIF Zone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAIF Zone/Pods-SAIF Zone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D2CB8932D42E3520A3C08F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAIF Zone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5BEE7CD73753DE2F42BCFF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAIF Zone/Pods-SAIF Zone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ABAAE8431B7B4B9C00352BE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -372,6 +458,7 @@
 				AB1D81A21BC51ACD0097A4E0 /* Reachability.swift in Sources */,
 				AB1EF2691B83306600812767 /* LocationAddress.swift in Sources */,
 				ABAAE84F1B7B4B9C00352BE4 /* ViewController.swift in Sources */,
+				52CC77E820502BE8007D96E8 /* NotificationController.swift in Sources */,
 				AB57D1051B8214D2002D805D /* vcMap.swift in Sources */,
 				ABAAE8701B7B4BB800352BE4 /* MBProgressHUD.m in Sources */,
 				AB57D0FA1B81E7B5002D805D /* MMDrawerBarButtonItem.m in Sources */,
@@ -460,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "66df831a-5058-4855-bded-98edcec909f1";
@@ -502,7 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "66df831a-5058-4855-bded-98edcec909f1";
 				SDKROOT = iphoneos;
@@ -513,6 +600,7 @@
 		};
 		ABAAE8671B7B4B9D00352BE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 922466DBD2C54C952C6B4930 /* Pods-SAIF Zone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -521,7 +609,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = BZSB59QTTY;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SaifZone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -532,12 +620,13 @@
 				SDKROOT = iphoneos11.2;
 				SWIFT_OBJC_BRIDGING_HEADER = "./SaifZone/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		ABAAE8681B7B4B9D00352BE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B887BDC4469F5B628D625B8 /* Pods-SAIF Zone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -547,7 +636,7 @@
 				DEVELOPMENT_TEAM = BZSB59QTTY;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SaifZone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -557,7 +646,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos11.2;
 				SWIFT_OBJC_BRIDGING_HEADER = "./SaifZone/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -580,7 +669,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ScopeLocation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAIF ZONE.temp_caseinsensitive_rename.app/SAIF ZONE.temp_caseinsensitive_rename";
 			};
 			name = Debug;
@@ -600,7 +689,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ScopeLocation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAIF ZONE.temp_caseinsensitive_rename.app/SAIF ZONE.temp_caseinsensitive_rename";
 			};
 			name = Release;
@@ -636,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "66df831a-5058-4855-bded-98edcec909f1";
 				SDKROOT = iphoneos;
@@ -647,6 +736,7 @@
 		};
 		ABC704F71B84590F00B25E9F /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E775DBA4CF7FCF67A8744D27 /* Pods-SAIF Zone.distribution.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -655,7 +745,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = BZSB59QTTY;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SaifZone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -665,7 +755,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos11.2;
 				SWIFT_OBJC_BRIDGING_HEADER = "./SaifZone/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Distribution;
 		};
@@ -684,7 +774,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ScopeLocation.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "SAIF ZONE.temp_caseinsensitive_rename";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAIF ZONE.temp_caseinsensitive_rename.app/SAIF ZONE.temp_caseinsensitive_rename";
 			};
 			name = Distribution;

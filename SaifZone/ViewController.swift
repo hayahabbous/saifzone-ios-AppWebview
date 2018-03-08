@@ -331,7 +331,7 @@ extension ViewController {
         self.touchStatusBar()
         
     }
-    func touchStatusBar()
+    @objc func touchStatusBar()
     {
         //  dispatch_async(dispatch_get_main_queue(), { () -> Void in
         //var top : CGPoint  = CGPointMake(0, -UIScreen.mainScreen().bounds.size.height+20)// can also use CGPointZero here

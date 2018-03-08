@@ -10,68 +10,72 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     var  centerContainer : MMDrawerController?
     var kStatusBarTappedNotification : String = "statusBarTappedNotification"
-   
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        application.applicationIconBadgeNumber = 0
+        setCategories()
+        UNUserNotificationCenter.current().delegate = self
         registerForPushNotifications()
         return true
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        if (application.applicationState == UIApplicationState.background) {
-//            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadView"), object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken! )
-            
-            let notificationName = Notification.Name("NotificationIdentifier")
-            
-            // Register to receive notification
-            //                    NotificationCenter.default.addObserver(self, selector: #selector(YourClassName.methodOfReceivedNotification), name: notificationName, object: nil)
-            //
-            // Post notification
-            NotificationCenter.default.post(name: notificationName, object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken!)
-            
-            // Stop listening notification
-            NotificationCenter.default.removeObserver(self, name: notificationName, object: nil)
-        }else
-            
-        {
-            if let notification = userInfo["aps"] as? NSDictionary,
-                let _ = notification["alert"] as? String {
-               // var _ : String = ( notification["alert"] as? String)! +  (notification["url"] as? String)!
-                let alertCtrl = UIAlertController(title: "SAIF ZONE", message: notification["alert"] as? String, preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) {
-                    UIAlertAction in
-                    
-//                    NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadView"), object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken! )
-//
-                    
-                    // Define identifier
-                    let notificationName = Notification.Name("NotificationIdentifier")
-                    
-                    // Register to receive notification
-//                    NotificationCenter.default.addObserver(self, selector: #selector(YourClassName.methodOfReceivedNotification), name: notificationName, object: nil)
-//
-                    // Post notification
-                    NotificationCenter.default.post(name: notificationName, object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken!)
-                    
-                    // Stop listening notification
-                    NotificationCenter.default.removeObserver(self, name: notificationName, object: nil)
-                    alertCtrl.dismiss(animated: true, completion: nil)
-                    
-                }
-                alertCtrl.addAction(okAction)
-                // Find the presented VC...
-                var presentedVC = self.window?.rootViewController
-                while (presentedVC!.presentedViewController != nil)  {
-                    presentedVC = presentedVC!.presentedViewController
-                }
-                presentedVC!.present(alertCtrl, animated: true, completion: nil)
-                
-            }
-        }
+        //        if (application.applicationState == UIApplicationState.background) {
+        ////            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadView"), object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken! )
+        //
+        //            let notificationName = Notification.Name("NotificationIdentifier")
+        //
+        //            // Register to receive notification
+        //            //                    NotificationCenter.default.addObserver(self, selector: #selector(YourClassName.methodOfReceivedNotification), name: notificationName, object: nil)
+        //            //
+        //            // Post notification
+        //            NotificationCenter.default.post(name: notificationName, object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken!)
+        //
+        //            // Stop listening notification
+        //            NotificationCenter.default.removeObserver(self, name: notificationName, object: nil)
+        //        }else
+        //
+        //        {
+        //            if let notification = userInfo["aps"] as? NSDictionary,
+        //                let _ = notification["alert"] as? String {
+        //               // var _ : String = ( notification["alert"] as? String)! +  (notification["url"] as? String)!
+        //                let alertCtrl = UIAlertController(title: "SAIF ZONE", message: notification["alert"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+        //                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) {
+        //                    UIAlertAction in
+        //
+        ////                    NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadView"), object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken! )
+        ////
+        //
+        //                    // Define identifier
+        //                    let notificationName = Notification.Name("NotificationIdentifier")
+        //
+        //                    // Register to receive notification
+        ////                    NotificationCenter.default.addObserver(self, selector: #selector(YourClassName.methodOfReceivedNotification), name: notificationName, object: nil)
+        ////
+        //                    // Post notification
+        //                    NotificationCenter.default.post(name: notificationName, object: "http://dev.saif-zone.com/en/m/Pages/NotificationsList.aspx?DeviceId=" + self.strdeviceToken!)
+        //
+        //                    // Stop listening notification
+        //                    NotificationCenter.default.removeObserver(self, name: notificationName, object: nil)
+        //                    alertCtrl.dismiss(animated: true, completion: nil)
+        //
+        //                }
+        //                alertCtrl.addAction(okAction)
+        //                // Find the presented VC...
+        //                var presentedVC = self.window?.rootViewController
+        //                while (presentedVC!.presentedViewController != nil)  {
+        //                    presentedVC = presentedVC!.presentedViewController
+        //                }
+        //                presentedVC!.present(alertCtrl, animated: true, completion: nil)
+        //
+        //            }
+        //        }
     }
     
     
@@ -94,13 +98,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         strdeviceToken = tokenParts.joined()
         let defaults = UserDefaults.standard
         defaults.set(strdeviceToken, forKey: "deviceID")
-        print("<<<<<<<<<<<<\(String(describing: strdeviceToken))>>>>>>>>>>>>>>")
+        print("******\(strdeviceToken!)*******")
+        
         
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         
         print("Failed to register: \(error)")
-       
+        
         
     }
     
@@ -140,6 +145,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard granted else { return }
             self.getNotificationSettings()
         }
+        
+        
     }
     
     func getNotificationSettings() {
@@ -149,6 +156,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DispatchQueue.main.async(execute: {
                 UIApplication.shared.registerForRemoteNotifications()
             })         }
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("handling notification")
+        if let notification = response.notification.request.content.userInfo as? [String:AnyObject] {
+            let url = parseRemoteNotification(notification: notification)
+            guard url?.isEmpty == false else{
+                return
+            }
+            UserDefaults.standard.set(url, forKey: "notificationURL")
+            let  story : UIStoryboard = UIStoryboard(name:"Main" , bundle: nil)
+            let vc : NotificationController = story.instantiateViewController(withIdentifier: "NotificationController") as! NotificationController
+            window?.rootViewController = vc;
+        }
+        completionHandler()
+    }
+    
+    private func parseRemoteNotification(notification:[String:AnyObject]) -> String? {
+        
+        if let aps = notification["aps"] as? [String:AnyObject] {
+            let alert = aps["alert"] as? String
+            let url = notification["URL"] as? String
+            return url
+        }
+        
+        return nil
+    }
+    // To work button , you need to add "category" key on the "notification" json within "aps" tag.
+    func setCategories(){
+        let snoozeAction = UNNotificationAction(
+            identifier: "open.action",
+            title: "Open",
+            options: [])
+        let pizzaCategory = UNNotificationCategory(
+            identifier: "open.category",
+            actions: [snoozeAction],
+            intentIdentifiers: [],
+            options: [])
+        UNUserNotificationCenter.current().setNotificationCategories(
+            [pizzaCategory])
     }
 }
 
