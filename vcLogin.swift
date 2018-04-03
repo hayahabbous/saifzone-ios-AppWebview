@@ -37,22 +37,22 @@ class vcLogin: UIViewController ,UITextFieldDelegate, UIScrollViewDelegate{
         txtUserName.delegate = self
         txtPassword.delegate = self
         scrollView.delegate = self
-        // Do any additional setup after loading the view.
-        let loginInfo : NSDictionary = helper.LoadData()
-        if let dict  : NSDictionary = loginInfo {
-            //loading values
-            if dict["UserName"] != nil && dict["Password"] != nil  {
-                if dict["UserName"] as! String != "" && dict["Password"] as! String != "" {
-                    DispatchQueue.main.async(execute: {
-                        //            self.txtUserName.text = dict["UserName"]  as? String
-                        //            self.txtPassword.text = dict["Password"] as? String
-                    })
-                }
-            }
-        }
-        else {
-            print("WARNING: Couldn't create dictionary from SettingLst.plist! Default values will be used!")
-        }
+//        // Do any additional setup after loading the view.
+//        let loginInfo : NSDictionary = helper.LoadData()
+//        if let dict  : NSDictionary = loginInfo {
+//            //loading values
+//            if dict["UserName"] != nil && dict["Password"] != nil  {
+//                if dict["UserName"] as! String != "" && dict["Password"] as! String != "" {
+//                    DispatchQueue.main.async(execute: {
+//                        //            self.txtUserName.text = dict["UserName"]  as? String
+//                        //            self.txtPassword.text = dict["Password"] as? String
+//                    })
+//                }
+//            }
+//        }
+//        else {
+//            print("WARNING: Couldn't create dictionary from SettingLst.plist! Default values will be used!")
+//        }
         checkBox.isChecked = true
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 27, height: 27))
@@ -253,46 +253,46 @@ class vcLogin: UIViewController ,UITextFieldDelegate, UIScrollViewDelegate{
         UserDefaults.standard.set(txtUserName.text, forKey: "userName")
         UserDefaults.standard.set(txtPassword.text, forKey: "password")
         UserDefaults.standard.set("true", forKey: "autoLogin")
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
-        let documentsDirectory = paths.object(at: 0) as! NSString
-        let Path = documentsDirectory.appendingPathComponent("lstSetting.plist")
-        
-        
-        // let path :NSString = documentsDirectory.stringByAppendingPathComponent("ettingLst.plist")
-        
-        let fileManager = FileManager.default
-        //check if file exists
-        if(!fileManager.fileExists(atPath: Path)) {
-            // If it doesn't, copy it from the default file in the Bundle
-            if let bundlePath = Bundle.main.path(forResource: "lstSetting", ofType: "plist") {
-                let resultDictionary = NSMutableDictionary(contentsOfFile: bundlePath)
-                print("Bundle lstSetting.plist file is --> \(resultDictionary?.description)")
-                do {
-                    try fileManager.copyItem(atPath: bundlePath, toPath: Path)
-                }
-                catch {
-                    print("error")
-                }//(bundlePath, toPath: Path)
-                print("copy")
-            } else {
-                print("SettingLst.plist not found. Please, make sure it is part of the bundle.")
-            }
-        } else {
-            print("SettingLst.plist already exits at path.")
-            // use this to delete file from documents directory
-            //fileManager.removeItemAtPath(path, error: nil)
-        }
-        
-        let dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
-        //saving values
-        dict.setObject(txtUserName.text!, forKey: "UserName" as NSCopying)
-        dict.setObject(txtPassword.text!, forKey: "Password" as NSCopying)
-        
-        
-        dict.write(toFile: Path, atomically: false)
-        let resultDictionary = NSMutableDictionary(contentsOfFile: Path)
-        print("Saved SettingLst file is --> \(resultDictionary?.description)")
-        
+//        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+//        let documentsDirectory = paths.object(at: 0) as! NSString
+//        let Path = documentsDirectory.appendingPathComponent("lstSetting.plist")
+//
+//
+//        // let path :NSString = documentsDirectory.stringByAppendingPathComponent("ettingLst.plist")
+//
+//        let fileManager = FileManager.default
+//        //check if file exists
+//        if(!fileManager.fileExists(atPath: Path)) {
+//            // If it doesn't, copy it from the default file in the Bundle
+//            if let bundlePath = Bundle.main.path(forResource: "lstSetting", ofType: "plist") {
+//                let resultDictionary = NSMutableDictionary(contentsOfFile: bundlePath)
+//                print("Bundle lstSetting.plist file is --> \(resultDictionary?.description)")
+//                do {
+//                    try fileManager.copyItem(atPath: bundlePath, toPath: Path)
+//                }
+//                catch {
+//                    print("error")
+//                }//(bundlePath, toPath: Path)
+//                print("copy")
+//            } else {
+//                print("SettingLst.plist not found. Please, make sure it is part of the bundle.")
+//            }
+//        } else {
+//            print("SettingLst.plist already exits at path.")
+//            // use this to delete file from documents directory
+//            //fileManager.removeItemAtPath(path, error: nil)
+//        }
+//
+//        let dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
+//        //saving values
+//        dict.setObject(txtUserName.text!, forKey: "UserName" as NSCopying)
+//        dict.setObject(txtPassword.text!, forKey: "Password" as NSCopying)
+//
+//
+//        dict.write(toFile: Path, atomically: false)
+//        let resultDictionary = NSMutableDictionary(contentsOfFile: Path)
+//        print("Saved SettingLst file is --> \(resultDictionary?.description)")
+//
         
     }
     

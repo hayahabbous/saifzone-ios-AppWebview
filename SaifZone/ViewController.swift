@@ -93,12 +93,7 @@ class ViewController : UIViewController, WKNavigationDelegate{
             }
             return
         }else  if clickedUrl.contains("logout.aspx") {
-            UserDefaults.standard.set("false", forKey: "secure")
-            UserDefaults.standard.set("false", forKey: "autoLogin")
-            UserDefaults.standard.removeObject(forKey: "userName")
-            UserDefaults.standard.removeObject(forKey: "password")
-            UserDefaults.standard.removeObject(forKey: "userType")
-            UserDefaults.standard.removeObject(forKey: "tokenType")
+           doOfflineLogout()
             UserDefaults.standard.set("http://saif-zone.com/en/m/Pages/default.aspx", forKey: "URL")
             getData()
         }
@@ -136,6 +131,18 @@ class ViewController : UIViewController, WKNavigationDelegate{
         }
         
     }
+    
+    func doOfflineLogout(){
+        DispatchQueue.global(qos: .userInitiated).async {
+            UserDefaults.standard.set("false", forKey: "secure")
+            UserDefaults.standard.set("false", forKey: "autoLogin")
+            UserDefaults.standard.removeObject(forKey: "userName")
+            UserDefaults.standard.removeObject(forKey: "password")
+            UserDefaults.standard.removeObject(forKey: "userType")
+            UserDefaults.standard.removeObject(forKey: "tokenType")
+        }
+       
+    }
 }
 
 extension ViewController {
@@ -157,11 +164,14 @@ extension ViewController {
                 } else {
                     //TODO: User did not authenticate successfully, look at error and take appropriate action
                     guard let error = evaluateError else {
+                      
                         return
                     }
                     print("**************"+self.evaluateAuthenticationPolicyMessageForLA(errorCode: error._code))
-                    
-                    //TODO: If you have choosen the 'Fallback authentication mechanism selected' (LAError.userFallback). Handle gracefully
+                    self.doOfflineLogout()
+                    DispatchQueue.main.async(execute: {
+                        self.gotoLoginPage()
+                    })                    //TODO: If you have choosen the 'Fallback authentication mechanism selected' (LAError.userFallback). Handle gracefully
                     
                 }
             }
@@ -172,15 +182,15 @@ extension ViewController {
             }
             //TODO: Show appropriate alert if biometry/TouchID/FaceID is lockout or not enrolled
             print(self.evaluateAuthenticationPolicyMessageForLA(errorCode: error.code))
-            self.tryForLogin()
-            
+            DispatchQueue.main.async(execute: {
+                self.gotoLoginPage()
+            })
         }
     }
     
     func gotoLoginPage(){
         let  story : UIStoryboard = UIStoryboard(name:"Main" , bundle: nil)
         let vc : vcLogin = story.instantiateViewController(withIdentifier: "Login") as! vcLogin
-        
         self.present(vc,animated : true , completion: nil)
     }
     func tryForLogin() {
