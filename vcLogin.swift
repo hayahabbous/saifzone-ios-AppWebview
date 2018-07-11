@@ -172,7 +172,13 @@ class vcLogin: UIViewController ,UITextFieldDelegate, UIScrollViewDelegate{
         
         
         //let url :String = "http://devdpa.saif-zone.com/authenticate/GetValue/" + txtUserName.text! + "/" + txtPassword.text! + "/" + name
-        let url :String =  "http://ws.saif-zone.com:7777/authenticate/\(urlSource[selectedUserType])/" + txtUserName.text! + "/" + txtPassword.text! + "/" + name
+        let originalString = txtPassword.text!
+        var escapedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        print(escapedString!)
+        escapedString = escapedString?.replacingOccurrences(of: "%", with: "7m7m7m")
+        escapedString = escapedString?.replacingOccurrences(of: "*", with: "8m8m8m")
+        print(escapedString!)
+        let url :String =  "http://ws.saif-zone.com:7777/authenticate/\(urlSource[selectedUserType])/" + txtUserName.text! + "/" + escapedString! + "/" + name
         print("Login URL : \(url)")
         
         let loginUrl = URL(string: url)

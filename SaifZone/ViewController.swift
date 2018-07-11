@@ -201,11 +201,16 @@ extension ViewController {
             name = str + "/1"
         }
         
-        
+        let originalString = UserDefaults.standard.object(forKey: "password")  as! String
+        var escapedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        print(escapedString!)
+        escapedString = escapedString?.replacingOccurrences(of: "%", with: "7m7m7m")
+        escapedString = escapedString?.replacingOccurrences(of: "*", with: "8m8m8m")
+        print(escapedString!)
         
         // let url : String = "http://dev.saif-zone.com/_vti_bin/SharePoint.WCFService.Sample/Services/SampleService.svc/Auth(" + txtUserName.text! + "," + txtPassword.text! + "," + name + ")"
         
-        let url :String = "http://ws.saif-zone.com:7777/authenticate/\(UserDefaults.standard.object(forKey: "userType") as! String)/\(UserDefaults.standard.object(forKey: "userName")  as! String)/\(UserDefaults.standard.object(forKey: "password")  as! String)/\(name)"
+        let url :String = "http://ws.saif-zone.com:7777/authenticate/\(UserDefaults.standard.object(forKey: "userType") as! String)/\(UserDefaults.standard.object(forKey: "userName")  as! String)/\(escapedString!)/\(name)"
         // let url :String =  "http://ws.saif-zone.com:7777/authenticate/GetValue/" + txtUserName.text! + "/" + txtPassword.text! + "/" + name
         
         let loginUrl = URL(string: url)
@@ -250,15 +255,17 @@ extension ViewController {
                         
                     }
                 } else {
-                    print("No Data")
-                    // couldn't load JSON, look at error
+                    DispatchQueue.main.async(execute: {
+                        self.gotoLoginPage()
+                    })                    // couldn't load JSON, look at error
                 }
                 
             }
             catch
             {
-                print(error)
-                
+                DispatchQueue.main.async(execute: {
+                    self.gotoLoginPage()
+                })
             }
         }).resume()
         
