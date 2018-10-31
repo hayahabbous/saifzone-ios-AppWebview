@@ -6,16 +6,14 @@
 	<dict>
 		<key>CryptoSwift.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Pods-SAIF Zone.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict/>
 </dict>
 </plist>
